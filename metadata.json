@@ -1,0 +1,6 @@
+{
+  "name": "Dojo Digital",
+  "description": "E-book digital interativo sobre Judô com capítulos de história, fundamentos, técnicas e katas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
