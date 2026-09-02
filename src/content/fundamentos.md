@@ -1,65 +1,82 @@
-# Princípios, Código Moral e Fundamentos Práticos
+# Fundamentos e Código de Ética
 
-O Judô é construído sobre fortes alicerces morais e filosóficos, além de fundamentos físicos rigorosos que garantem o sucesso das técnicas.
+> "O judoca é aquele que possui inteligência para compreender aquilo que lhe ensinam, paciência para ensinar o que aprendeu aos seus semelhantes e fé para acreditar naquilo que não compreende."
+> — **Sensei Jigoro Kano**
 
-> "Apenas através do esforço mútuo e do respeito podemos alcançar o bem-estar e o benefício coletivo."
+O estudo dos fundamentos (*Kihon*) constitui o alicerce indispensável para a prática segura, eficiente e ética do Judô. No Judô Kodokan, a técnica corporal caminha sempre de mãos dadas com a disciplina moral.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/guJ-HlAKEA8?si=qgo98Qs5pr6Xu6Ny" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+---
 
-## O Código Moral do Judô
+## 🏛️ O Código Moral do Judô (8 Virtudes Tradicionais)
 
-O "Código Moral" é um conjunto de regras e padrões de comportamento que orienta as ações dos judocas, promovendo o respeito e a disciplina. No Judô, o código moral ajuda a desenvolver o caráter dos praticantes:
+O Judô apoia-se em oito preceitos morais herdados do *Bushido* (Caminho do Guerreiro) e adaptados pelo Mestre Jigoro Kano para a formação integral do cidadão:
 
-1. **Amizade:** Ser um bom companheiro e amigo para os outros. O judô exige cooperação mútua.
-2. **Cortesia:** Ser educado e gentil. A cortesia molda o caráter e promove a harmonia.
-3. **Respeito:** Sem respeito, não há confiança. Ele garante a segurança e o aperfeiçoamento contínuo.
-4. **Honestidade:** Ser verdadeiro em seus pensamentos e ações.
-5. **Autocontrole:** Ter controle sobre suas emoções. É manter a calma em situações adversas.
-6. **Modéstia:** Falar de nós mesmos sem orgulho e exibir vitórias com respeito.
-7. **Honra:** Fazer o que é certo e manter-se fiel aos princípios.
-8. **Coragem:** Enfrentar os desafios com bravura, sem medo de perder.
+| Virtude | Em Japonês (Romaji) | Significado e Prática no Tatame |
+| :--- | :--- | :--- |
+| **Cortesia (Polidez)** | *Reigi* (礼儀) | O respeito e a gentileza no trato com todos os companheiros e mestres. |
+| **Coragem** | *Yuuki* (勇気) | Fazer o que é justo, superando o medo do erro e da derrota. |
+| **Sinceridade** | *Magokoro* (真心) | Expressar-se sem fingimento; agir com clareza de pensamento e transparência. |
+| **Honra** | *Eiyo* (栄誉) | Ser fiel à palavra dada, aos princípios morais e à conduta limpa. |
+| **Modéstia** | *Kenson* (謙遜) | Falar de si mesmo sem orgulho ou arrogância; reconhecer o aprendizado constante. |
+| **Respeito** | *Keii* (敬意) | Sem respeito não pode nascer a confiança mútua entre os parceiros. |
+| **Autocontrole** | *Gaman* (我慢) | Saber conter a raiva e os impulsos, mantendo a serenidade mental. |
+| **Amizade** | *Yuujou* (友情) | O sentimento mais puro e forte que une os judocas na prosperidade comum. |
 
-## Os Princípios Filosóficos
+---
 
-A genialidade de Jigoro Kano foi basear toda a prática biomecânica em princípios que se estendem à vida:
+## 🥋 Rituais de Saudação (*Rei-ho*) e Etiqueta do Dojô
 
-* **Jita Kyoei (Bem-Estar e Benefícios Mútuos):** A solidariedade humana para o benefício pessoal e universal. O progresso e a prosperidade são alcançados quando há cooperação.
-* **Seiryoku Zen'yo (Máxima Eficiência, Mínimo Esforço):** O melhor uso da energia. Utilizar a força e energia da forma mais eficaz possível, alcançando resultados com o menor desgaste.
-* **Ju (Princípio da Suavidade):** Ceder à força em vez de resistir. Usar a força do oponente contra ele mesmo para vencer. É flexibilidade e adaptação.
+A prática do Judô inicia-se e encerra-se com saudações de respeito mútuo:
 
-## Fundamentos Práticos
+1. **Ritsu-rei (立礼):** Saudação em pé (inclinação do tronco em aproximadamente 30 graus com os calcanhares unidos na posição *Kiotsuke*).
+   - Ao entrar e sair do Dojô (*Nyujo-no-rei* / *Taijo-no-rei*).
+   - Ao pisar no Tatame e antes de iniciar o treino com o colega.
+2. **Za-rei (座礼):** Saudação de joelhos na posição cerimonial (*Seiza*).
+   - Na abertura e encerramento formal do treino.
+   - Diante do mestre fundador (*Kano-Shihan-ni-rei*) e dos professores (*Sensei-ni-rei* / *Sensei-gata-ni-rei*).
 
-A maestria das técnicas requer um profundo entendimento da base física e comportamental.
+### 📋 Regras de Conduta no Dojô
+- **Higiene e Uniforme:** O *Judogi* deve estar limpo e seco. Unhas dos pés e mãos rigorosamente cortadas. Cabelos compridos presos com elástico sem partes metálicas.
+- **Calçados:** Fora do tatame, usar sempre chinelos (*Zori*). Dentro do tatame, estritamente descalço.
+- **Ambiente de Silêncio e Foco:** Não conversar durante a explicação do professor, não usar celulares no tatame e jamais proferir palavras agressivas.
 
-### 1. Rei-Ho (Saudações) e O Dojô
-O "Rei-Ho" refere-se ao protocolo de saudação e etiqueta, evidenciando respeito e humildade.
-* **Ritsu-Rei:** Saudação em pé.
-* **Za-Rei:** Saudação ajoelhado (Posição Seiza).
+---
 
-O local de treinamento é o **Dojô**, mais que um espaço físico, é um ambiente para o desenvolvimento pessoal. No Dojô, temos o Tatami e as divisões como Kamiza (assento mais alto para os professores) e Shimoza (onde ficam os alunos).
+## 🛡️ Amortecimento de Quedas (*Ukemi-Waza*)
 
-### 2. Ukemi (A Arte da Queda)
-O Ukemi ensina a técnica de amortecimento de quedas, com o objetivo de minimizar o impacto e evitar lesões.
-* **Ushiro-Ukemi (Kōhō-Ukemi):** Queda para trás.
-* **Yoko-Ukemi (Sokuhō-Ukemi):** Queda para os lados.
-* **Mae-Ukemi (Zempō-Ukemi):** Queda para frente.
-* **Zempō-Kaiten-Ukemi:** Rolamento para frente.
+Aprender a cair sem se machucar é a primeira e mais importante habilidade do judoca:
 
-### 3. Posturas (Shisei) e Movimentação
-A postura afeta a estabilidade, o equilíbrio e a capacidade de aplicação da técnica.
-* **Shizen-Hon-Tai:** Postura Natural.
-* **Jigo-Hon-Tai:** Postura Defensiva Básica.
+- **Ushiro-Ukemi (後ろ受身):** Queda para trás (amortecimento batendo os dois braços a 45º com o queixo encostado no peito).
+- **Yoko-Ukemi (横受身):** Queda lateral (amortecimento com um braço e perna alinhada).
+- **Mae-Ukemi (前受身):** Queda frontal (amortecimento com os antebraços e palmas das mãos sem tocar o abdômen no solo).
+- **Zenpo-Kaiten-Ukemi (前方回転受身):** Rolamento para frente pelo ombro com amortecimento contínuo.
 
-A movimentação engloba o **Shintai** (Deslocamentos lineares pelo tatame usando Ayumi-Ashi ou Tsugi-Ashi) e o **Tai-Sabaki** (Movimentação rotatória de esquiva essencial para aplicação de técnicas e geração do Kuzushi).
+---
 
-### 4. Kumi-Kata e As Fases da Projeção
-Dominar a pegada no Judogi (**Kumi-Kata**) é fundamental, usando a Mão da Gola (Tsurite - de elevação) e a Mão da Manga (Hikite - de puxar).
+## ⚖️ Posturas (*Shisei*), Movimentação (*Shintai*) e Desequilíbrio (*Kuzushi*)
 
-Toda projeção tem 5 fases cruciais:
-1. **Kumi-Kata:** Pegada no Judogi.
-2. **Kuzushi:** Desequilíbrio (quebra da estabilidade).
-3. **Tsukuri:** Preparação e encaixe da técnica.
-4. **Kake:** Execução efetiva da técnica.
-5. **Kime:** Conclusão, controle e decisão da técnica no momento final.
+### As 8 Direções de Desequilíbrio (*Happo-Kuzushi*)
+Toda técnica de projeção bem-sucedida depende da quebra prévia de equilíbrio do oponente:
+1. **Frente** (*Mae-Kuzushi*)
+2. **Trás** (*Ushiro-Kuzushi*)
+3. **Direita** (*Yoko-Migi-Kuzushi*)
+4. **Esquerda** (*Yoko-Hidari-Kuzushi*)
+5. **Diagonal Dianteira Direita** (*Mae-Sumi-Migi-Kuzushi*)
+6. **Diagonal Dianteira Esquerda** (*Mae-Sumi-Hidari-Kuzushi*)
+7. **Diagonal Traseira Direita** (*Ushiro-Sumi-Migi-Kuzushi*)
+8. **Diagonal Traseira Esquerda** (*Ushiro-Sumi-Hidari-Kuzushi*)
 
-Avance para o próximo capítulo para descobrir em detalhes a biblioteca completa de técnicas de projeção do Judô.
+---
+
+## 🎓 Sistema de Graduação Oficial da CBJ / FPJudô
+
+No Brasil e internacionalmente, as graduações dividem-se em:
+
+- **Dangai (Faixas Coloridas - Iniciante ao Avançado):**
+  - Branca (Iniciante) → Branca/Cinza (11º Kyu) → Cinza (10º Kyu) → Cinza/Azul (9º Kyu) → Azul (8º Kyu) → Azul/Amarela (7º Kyu) → Amarela (6º Kyu) → Amarela/Laranja (5º Kyu) → Laranja (4º Kyu) → Verde (3º Kyu) → Roxa (2º Kyu) → Marrom (1º Kyu).
+- **Yudansha (Faixa Preta - Mestres Instrutores):**
+  - 1º Dan (*Sho Dan*) ao 5º Dan (*Go Dan*).
+  - Título de **Sensei** (Professor qualificado).
+- **Kodansha (Alta Graduação Superior da Kodokan):**
+  - 6º, 7º e 8º Dan: Faixa Coral (Vermelha e Branca - *Kohaku-obi*). Título de **Shihan**.
+  - 9º e 10º Dan: Faixa Vermelha (*Aka-obi*).

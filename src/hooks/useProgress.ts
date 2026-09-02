@@ -1,33 +1,99 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { DojoStorageService } from '../services/storageService';
 
 export function useProgress() {
-  const [completedChapters, setCompletedChapters] = useState<string[]>([]);
+  const [progressState, setProgressState] = useState(() => DojoStorageService.getProgress());
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
+  const completedChapters = progressState.completedChapters;
+  const lastAccessedChapter = progressState.lastAccessedChapter;
+
+  // Sincronização multi-aba
   useEffect(() => {
-    const saved = localStorage.getItem('dojo_progress');
-    if (saved) {
+    const handleStorageChange = () => {
       try {
-        setCompletedChapters(JSON.parse(saved));
-      } catch (e) {
-        console.error('Failed to parse progress', e);
+        const fresh = DojoStorageService.getProgress();
+        setProgressState(fresh);
+      } catch (err) {
+        console.warn('Erro ao atualizar progresso via evento:', err);
       }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
+
+  const toggleChapter = useCallback((slug: string) => {
+    if (!slug) return;
+    try {
+      setLoading(true);
+      setError(null);
+      const updated = DojoStorageService.toggleChapterCompletion(slug);
+      setProgressState(updated);
+    } catch (e: any) {
+      setError('Não foi possível salvar a conclusão da aula.');
+    } finally {
+      setLoading(false);
     }
   }, []);
 
-  const toggleChapter = (slug: string) => {
-    setCompletedChapters((prev) => {
-      const next = prev.includes(slug)
-        ? prev.filter((c) => c !== slug)
-        : [...prev, slug];
-      localStorage.setItem('dojo_progress', JSON.stringify(next));
-      return next;
-    });
-  };
+  const markChapterCompleted = useCallback((slug: string) => {
+    if (!slug) return;
+    try {
+      if (completedChapters.includes(slug)) return;
+      const updated = DojoStorageService.toggleChapterCompletion(slug);
+      setProgressState(updated);
+    } catch (e: any) {
+      setError('Erro ao marcar aula como concluída.');
+    }
+  }, [completedChapters]);
 
-  const getProgressPercentage = (totalChapters: number) => {
-    if (totalChapters === 0) return 0;
-    return Math.round((completedChapters.length / totalChapters) * 100);
-  };
+  const markChapterIncomplete = useCallback((slug: string) => {
+    if (!slug) return;
+    try {
+      if (!completedChapters.includes(slug)) return;
+      const updated = DojoStorageService.toggleChapterCompletion(slug);
+      setProgressState(updated);
+    } catch (e: any) {
+      setError('Erro ao desmarcar aula.');
+    }
+  }, [completedChapters]);
 
-  return { completedChapters, toggleChapter, getProgressPercentage };
+  const setLastAccessed = useCallback((slug: string) => {
+    if (!slug) return;
+    DojoStorageService.setLastAccessedChapter(slug);
+    setProgressState((prev) => ({ ...prev, lastAccessedChapter: slug }));
+  }, []);
+
+  const isChapterCompleted = useCallback((slug: string): boolean => {
+    return completedChapters.includes(slug);
+  }, [completedChapters]);
+
+  const getProgressPercentage = useCallback((totalChapters: number): number => {
+    if (totalChapters <= 0) return 0;
+    const percentage = Math.round((completedChapters.length / totalChapters) * 100);
+    return Math.min(100, Math.max(0, percentage));
+  }, [completedChapters]);
+
+  const resetProgress = useCallback(() => {
+    const emptyState = { completedChapters: [], lastAccessedChapter: 'introducao', completedAtMap: {} };
+    DojoStorageService.saveProgress(emptyState);
+    setProgressState(emptyState);
+  }, []);
+
+  return {
+    completedChapters,
+    lastAccessedChapter,
+    completedAtMap: progressState.completedAtMap,
+    loading,
+    error,
+    toggleChapter,
+    markChapterCompleted,
+    markChapterIncomplete,
+    setLastAccessed,
+    isChapterCompleted,
+    getProgressPercentage,
+    resetProgress,
+  };
 }

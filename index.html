@@ -2,20 +2,59 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dojo Digital - Academia Garça</title>
-    <link rel="icon" type="image/png" href="/LOGO 1.png" />
-    <meta name="description" content="E-book digital interativo sobre Judô com capítulos de história, fundamentos, técnicas e katas." />
-    <meta property="og:title" content="Dojo Digital - Judô" />
-    <meta property="og:description" content="E-book digital interativo sobre Judô com capítulos de história, fundamentos, técnicas e katas." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Dojo Digital - Plataforma de Ensino e Gokyo do Judô Kodokan</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#f59e0b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Dojo Digital" />
+
+    <meta name="description" content="Plataforma de ensino oficial do Judô Kodokan com acervo de 100 técnicas do Gokyo, fichas biomecânicas, arbitragem CBJ/IJF e salvaguarda." />
+    <meta name="keywords" content="Judô, Kodokan, Gokyo, Nage-waza, Katame-waza, CBJ, IJF, Arbitragem, Ukemi, Seoi-nage, O-soto-gari" />
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Open Graph & Social Media -->
+    <!-- Schema.org Structured Data (JSON-LD) para Google Search & IAs de Busca -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalApplication",
+      "name": "Dojo Digital",
+      "operatingSystem": "All",
+      "applicationCategory": "EducationalApplication",
+      "description": "Plataforma de ensino e curadoria biomecânica do Judô Kodokan e arbitragem esportiva.",
+      "educationalUse": "Treino e Exame de Faixa no Judô",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@type": "Organization",
+        "name": "Dojo Digital Educational Team"
+      }
+    }
+    </script>
+
+    <!-- Script para prevenir flicker de tema (FOUC) -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('dojo_digital_theme_v1') || localStorage.getItem('theme');
+          const isDark = stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches) || (!stored && !window.matchMedia('(prefers-color-scheme: light)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
-  <body>
+
+  <body class="bg-zinc-100 dark:bg-[#07090E] text-zinc-900 dark:text-zinc-100 antialiased selection:bg-amber-500 selection:text-zinc-950">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

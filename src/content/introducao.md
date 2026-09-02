@@ -1,41 +1,39 @@
-# Introdução e O Lado Educacional do Judô
+# Portal do Judoca: Boas-Vindas & Filosofia do Budo
 
-A Academia Garça Judô orgulha-se de apresentar o **Dojo Digital**, seu ambiente de aprendizado premium e imersivo. Saber cada dia um pouco mais e usá-lo todos os dias para o bem, esse é o caminho dos verdadeiros judocas.
+> "Praticar judô é educar a mente a pensar com velocidade e exatidão, bem como o corpo a obedecer com justeza. O corpo é uma arma cuja eficiência depende da precisão com que se usa a inteligência."
+> — **Sensei Jigoro Kano**
 
-> "Praticar judô é educar a mente a pensar com velocidade e exatidão, bem como o corpo obedecer com justeza. O corpo é uma arma cuja eficiência depende da precisão com que se usa a inteligência." — Jigoro Kano
+O **Dojo Digital da Associação de Judô de Garça** é o ambiente oficial de aprendizado, aperfeiçoamento técnico e formação de caráter através do Judô Kodokan. Esta plataforma foi desenvolvida para conectar a tradição centenária fundada pelo Mestre Jigoro Kano às metodologias pedagógicas modernas de estudo interativo.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=z-h3qZX9DiTBHsSE&list=PL8UVMnkghcOeXaWP7U5S6CQOJEYi9WooH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+---
 
-## O Judô: Muito Além da Luta
+## A Essência do Judô: Disciplina, Superação e Valores para a Vida
 
-O Judô, cujo significado literal é **"Caminho Suave"** (Ju = Suave, Do = Caminho), é uma arte marcial japonesa e um esporte olímpico de alto valor educacional. Além de ser uma arte de defesa pessoal, também ajuda no desenvolvimento físico e intelectual do praticante.
+Assista abaixo à compilação e apresentação dos princípios do Judô, superação e grandes momentos no tatame:
 
-Jigoro Kano, o fundador do Judô, tinha uma visão clara de integrar a arte marcial com a educação. Ele acreditava que o Judô não deveria ser apenas sobre técnicas de luta, mas também sobre o desenvolvimento físico, mental e moral. Ele introduziu mudanças significativas na transição do antigo *Jujutsu* (focado em letalidade) para o *Judô* (focado no autodesenvolvimento e na disciplina), tornando-o um verdadeiro "caminho marcial" (Budô).
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/FWoXF9nQw1U?rel=0&modestbranding=1" title="A Essência do Judô: Disciplina, Superação e Valores para a Vida" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## A Melhor Defesa Pessoal
+---
 
-Muitas pessoas perguntam sobre a efetividade de diversas artes marciais para a defesa pessoal. No Judô, a melhor forma de defesa pessoal não está em saber lutar ou dominar mais técnicas, mas em **evitar conflitos e discussões desnecessárias**. O Judô ensina que o mais importante é ter um bom comportamento e ser uma pessoa íntegra.
+## 🎯 Pilares da Nossa Formação
 
-Seus princípios mostram que a verdadeira força está no autocontrole e no respeito ao próximo. Evitar confusões é sinal de sabedoria, já que a violência pode trazer consequências negativas para todos. O Judô nos ensina a resolver conflitos pacificamente, enfatizando que a melhor resposta é sempre a prevenção.
+A formação no Dojo Digital estrutura-se em três dimensões integradas da educação física e moral:
 
-## Benefícios do Judô
+1. **Desenvolvimento Intelectual:** Estudo detalhado dos nomes em japonês (kanji e romaji), classificação biomecânica, história das escolas ancestrais (*Ju-jutsu*) e códigos de conduta.
+2. **Aprimoramento Físico & Biomecânico:** Compreensão dos princípios de equilíbrio e alavanca através das fases essenciais de projeção (*Kuzushi*, *Tsukuri*, *Kake* e *Zanshin*).
+3. **Elevação Ética e Moral:** Vivência prática dos lemas máximos do Judô:
+   - **Seiryoku Zen'yo (精力善用):** Máxima eficiência com o mínimo de esforço.
+   - **Jita Kyoei (自他共栄):** Prosperidade e benefício mútuos.
 
-O Judô oferece uma ampla gama de benefícios, divididos em dois pilares:
+---
 
-### Físicos
-* **Coordenação Motora**
-* **Aumento da Concentração e Pensamento Rápido**
-* **Noção de Espaço e Domínio do Corpo**
-* **Equilíbrio, Flexibilidade e Força**
-* **Mobilidade de Articulações**
-* **Melhora do Condicionamento Físico**
+## 🧭 Como Navegar na Plataforma
 
-### Morais
-* **Controle Emocional e Paciência**
-* **Saber Ganhar e Perder**
-* **Senso de Responsabilidade e Disciplina**
-* **Respeito ao Próximo e Formação de Caráter**
-* **Redução da Timidez, Diminuição do Estresse e Melhora da Autoestima**
-* **Respeito à Hierarquia**
+- **Trilha Modular Sequencial:** Utilize o menu lateral para acompanhar a progressão dos módulos, desde a história e fundamentos até as técnicas avançadas e Katas.
+- **Catálogo Oficial Gokyo (139 Técnicas):** Acesse a videoteca com mais de 100 técnicas oficiais catalogadas com filtros por grupo biomecânico (*Te-waza*, *Koshi-waza*, *Ashi-waza*, *Sutemi-waza*, *Katame-waza*).
+- **Busca Global Instantânea (`Ctrl + K`):** Localize instantaneamente qualquer golpe, conceito filosófico ou termo de arbitragem.
+- **Marcação de Progresso:** Ao concluir o estudo de cada aula, clique no botão **"Marcar Esta Aula como Concluída"** para salvar seu progresso.
 
-Avance para o próximo capítulo para aprofundar-se na rica História do Judô e de seu criador.
+---
+
+> **Aviso de Segurança Pedagógica:** As técnicas demonstradas em vídeo destinam-se exclusivamente ao estudo teórico e aperfeiçoamento sob supervisão direta de professores certificados em tatames adequados. Pratique sempre com respeito e segurança mútua.

@@ -1,6 +1,8 @@
 {
   "name": "Dojo Digital",
-  "description": "E-book digital interativo sobre Judô com capítulos de história, fundamentos, técnicas e katas.",
+  "description": "Plataforma de ensino oficial do Judô Kodokan com catálogo de técnicas, vídeos oficiais, história, fundamentos e katas.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

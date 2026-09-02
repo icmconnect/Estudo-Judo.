@@ -1,0 +1,18 @@
+{
+  "short_name": "Dojo Digital",
+  "name": "Dojo Digital - Plataforma do Judô Kodokan",
+  "description": "Plataforma de ensino oficial do Judô Kodokan com acervo biomecânico de 100 técnicas do Gokyo, arbitragem e salvaguarda.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512 192x192 64x64 32x32"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#09090b",
+  "theme_color": "#f59e0b",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": ["education", "sports", "lifestyle"]
+}

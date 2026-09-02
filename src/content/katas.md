@@ -1,38 +1,41 @@
-# O Estudo dos Katas
+# Katas Oficiais da Kodokan
 
-Enquanto o **Randori** (Treino Livre) desenvolve a intuição, o reflexo e a adaptação ao caos do combate, o **Kata** (Forma ou Padrão Formal) é o retorno à matriz pura do Judô. Os Katas são coreografias históricas, rigorosas e detalhadas que preservam a mecânica sagrada de Jigoro Kano.
+> "O Kata é a gramática do Judô; o Randori é a conversação."
+> — **Sensei Jigoro Kano**
 
-> "O Randori é o rio que se move e muda seu fluxo, o Kata é o mapa das correntes profundas que jamais se alteram."
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=eLWeAac_D8fKGoZO&list=PLtz539PTepc16H2iu5F3Q3D7_He1EYlIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-## A Gramática do Caminho Suave
-
-Para compreender a analogia, o Kata está para o Judô assim como a gramática está para a escrita. Você pode ser capaz de falar e lutar fluentemente (Randori), mas os Katas ensinarão os princípios teóricos e filosóficos subjacentes a cada movimento (Kuzushi, Tsukuri e Kake executados com perfeição de laboratório).
-
-No Kata, sempre há um **Tori** (o que executa a técnica) e um **Uke** (o que recebe). Diferente do Randori, o Uke tem um papel de altíssima exigência: ele ataca de forma sincera, correta e rigorosa, e aceita a técnica preservando a harmonia da forma. O Uke do Kata é quase tão avaliado quanto o Tori.
-
-## Os Grandes Katas da Kodokan
-
-Existem diversos Katas oficiais, mas os mais proeminentes, especialmente para fins de graduação e exames de faixa preta (Dan), são:
-
-### 1. Nage-no-Kata (As Formas de Projeção)
-Composto por 5 grupos de técnicas, com 3 técnicas cada, executadas para os lados direito e esquerdo. Ensina os princípios teóricos das projeções (Te-waza, Koshi-waza, Ashi-waza, Ma-sutemi-waza, Yoko-sutemi-waza). O praticante não está focado na força, mas na beleza da alavanca e do desequilíbrio impecável.
-
-### 2. Katame-no-Kata (As Formas de Controle e Ne-waza)
-Demonstra os princípios das técnicas de solo (Luta de Chão). É dividido em 3 seções:
-*   **Osaekomi-waza (Imobilizações)**
-*   **Shime-waza (Estrangulamentos)**
-*   **Kansetsu-waza (Chaves de Articulação)**
-Neste Kata, cada escape tentado pelo Uke resulta em uma transição lógica e inexorável do Tori para consolidar o controle.
-
-### 3. Kime-no-Kata (As Formas de Decisão / Defesa Pessoal)
-Historicamente um Kata de combate real (Shinken Shobu-no-Kata). Demonstra técnicas de defesa contra ataques desarmados e com armas (adagas - *Tanto* e espadas - *Katana*). O Kime-no-Kata ensina o espírito marcial, o julgamento correto de distâncias (Ma-ai) e a decisão de vida ou morte em um confronto. 
-
-### 4. Ju-no-Kata (A Forma da Suavidade)
-Considerado um dos Katas mais belos. Consiste em movimentos lentos, altamente elásticos, nos quais não há golpes abruptos nem projeções completas ao solo (os parceiros não chegam a cair efetivamente). O objetivo é treinar a verdadeira essência da flexibilidade mental e muscular, o ceder constante à força. Muitas vezes é praticado descalço ou de hakama (roupa tradicional) e é excelente para a reeducação postural e respiração diafragmática profunda.
+Os **Katas (形 - Formas)** constituem o patrimônio sagrado do Judô Kodokan. Eles preservam os princípios biomecânicos e filosóficos mais puros da arte marcial, ensinando precisão espacial, equilíbrio, respiração, sincronia e respeito entre *Tori* e *Uke*.
 
 ---
 
-### A Prática Contínua
-A graduação para a Faixa Preta (Sho-dan) requer habitualmente a proficiência impecável no **Nage-no-Kata**. O estudo não deve ser apressado, mas repetido infinitamente até que a forma não seja mais pensada, mas sentida pelo sistema nervoso de ambos os parceiros. As linhas geométricas que Tori e Uke desenham no tatame são a caligrafia milenar dos mestres imortalizada no seu corpo.
+## 🥋 Os 7 Katas Principais do Judô Kodokan
+
+A Kodokan reconhece oficialmente sete formas principais, divididas por objetivos pedagógicos:
+
+### 1. Nage-no-Kata (投の形) — Formas de Projeção
+Composto por 15 técnicas clássicas executadas à direita e à esquerda (totalizando 30 projeções), divididas em 5 séries de 3 técnicas:
+1. **Te-Waza (Mãos):** *Uki-Otoshi*, *Ippon-Seoi-Nage*, *Kata-Guruma*.
+2. **Koshi-Waza (Quadril):** *Uki-Goshi*, *Harai-Goshi*, *Tsuri-Komi-Goshi*.
+3. **Ashi-Waza (Pernas):** *Okuri-Ashi-Harai*, *Sasae-Tsuri-Komi-Ashi*, *Uchi-Mata*.
+4. **Ma-Sutemi-Waza (Sacrifício Frontal):** *Tomoe-Nage*, *Ura-Nage*, *Sumi-Gaeshi*.
+5. **Yoko-Sutemi-Waza (Sacrifício Lateral):** *Yoko-Gake*, *Yoko-Guruma*, *Uki-Waza*.
+
+### 2. Katame-no-Kata (固の形) — Formas de Controle no Solo
+Composto por 15 técnicas divididas em 3 séries de 5 técnicas:
+1. **Osaekomi-Waza (Imobilizações):** *Kesa-Gatame*, *Kata-Gatame*, *Kami-Shiho-Gatame*, *Yoko-Shiho-Gatame*, *Kuzure-Kami-Shiho-Gatame*.
+2. **Shime-Waza (Estrangulamentos):** *Kata-Juji-Jime*, *Hadaka-Jime*, *Okuri-Eri-Jime*, *Kata-Ha-Jime*, *Gyaku-Juji-Jime*.
+3. **Kansetsu-Waza (Chaves Articulares):** *Ude-Garami*, *Ude-Hishigi-Juji-Gatame*, *Ude-Hishigi-Ude-Gatame*, *Ude-Hishigi-Hiza-Gatame*, *Ude-Hishigi-Ashi-Gatame*.
+
+### 3. Ju-no-Kata (柔の形) — Formas da Suavidade e Flexibilidade
+Composto por 15 técnicas de movimentos fluidos e circulares, sem arremessos com impacto brusco, ensinando a ceder à força e a preservar a energia.
+
+### 4. Kime-no-Kata (極の形) — Formas de Decisão e Autodefesa Tradicional
+Técnicas de autodefesa contra ataques com espada curta (*Kodachi*), adaga (*Tanto*) e punhos desarmados, divididas em *Idori* (ajoelhado) e *Tachiai* (em pé).
+
+### 5. Kodokan Goshin-Jutsu (講道館護身術) — Formas Modernas de Autodefesa (1956)
+Criado por uma comissão especial para situações contemporâneas contra ataques desarmados, bastão, faca e pistola.
+
+### 6. Koshiki-no-Kata (古式の形) — Formas Antigas da Escola Kito-Ryu
+Preserva os movimentos dos samurais em pesadas armaduras de combate (*Yoroi*).
+
+### 7. Itsutsu-no-Kata (五の形) — As Cinco Formas da Natureza
+Expressão dos cinco grandes princípios das forças físicas e cósmicas do universo.

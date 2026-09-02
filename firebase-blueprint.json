@@ -1,0 +1,114 @@
+{
+  "entities": {
+    "Plan": {
+      "title": "Plan",
+      "description": "Definição de plano de assinatura e modelo comercial",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "name": { "type": "string", "maxLength": 128 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "amountInCents": { "type": "number" },
+        "currency": { "type": "string", "maxLength": 3 },
+        "paymentType": { "type": "string", "enum": ["one_time", "free"] },
+        "active": { "type": "boolean" },
+        "createdAt": { "type": "string", "maxLength": 64 },
+        "updatedAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "name", "amountInCents", "currency", "paymentType", "active"]
+    },
+    "Subscription": {
+      "title": "Subscription",
+      "description": "Registro oficial de acesso e status de assinatura do aluno",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "planId": { "type": "string", "maxLength": 64 },
+        "provider": { "type": "string", "enum": ["stripe", "manual", "none"] },
+        "status": {
+          "type": "string",
+          "enum": ["free", "pending_payment", "active", "failed", "cancelled", "refunded", "blocked", "manual_grant"]
+        },
+        "stripeCustomerId": { "type": "string", "maxLength": 128 },
+        "stripeCheckoutSessionId": { "type": "string", "maxLength": 128 },
+        "stripePaymentIntentId": { "type": "string", "maxLength": 128 },
+        "amountInCents": { "type": "number" },
+        "currency": { "type": "string", "maxLength": 3 },
+        "accessAllowed": { "type": "boolean" },
+        "sourceOfTruth": { "type": "string", "enum": ["stripe_webhook", "admin_manual", "migration"] },
+        "startedAt": { "type": "string", "maxLength": 64 },
+        "updatedAt": { "type": "string", "maxLength": 64 },
+        "expiresAt": { "type": "string", "maxLength": 64 },
+        "notesInternal": { "type": "string", "maxLength": 1000 }
+      },
+      "required": ["uid", "planId", "provider", "status", "accessAllowed", "sourceOfTruth", "updatedAt"]
+    },
+    "PaymentEvent": {
+      "title": "PaymentEvent",
+      "description": "Log de eventos de pagamento do Stripe Webhook",
+      "type": "object",
+      "properties": {
+        "provider": { "type": "string", "enum": ["stripe"] },
+        "providerEventId": { "type": "string", "maxLength": 128 },
+        "eventType": { "type": "string", "maxLength": 128 },
+        "uid": { "type": "string", "maxLength": 128 },
+        "planId": { "type": "string", "maxLength": 64 },
+        "stripePaymentIntentId": { "type": "string", "maxLength": 128 },
+        "stripeCheckoutSessionId": { "type": "string", "maxLength": 128 },
+        "processingStatus": { "type": "string", "enum": ["processed", "failed", "ignored"] },
+        "rawPayloadHash": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string", "maxLength": 64 },
+        "processedAt": { "type": "string", "maxLength": 64 },
+        "errorMessage": { "type": "string", "maxLength": 500 }
+      },
+      "required": ["provider", "providerEventId", "eventType", "uid", "processingStatus", "createdAt"]
+    },
+    "AdminAuditLog": {
+      "title": "AdminAuditLog",
+      "description": "Trilha de auditoria para ações de concessão e revogação administrativa de acesso",
+      "type": "object",
+      "properties": {
+        "actorUid": { "type": "string", "maxLength": 128 },
+        "actorEmail": { "type": "string", "maxLength": 256 },
+        "action": { "type": "string", "maxLength": 64 },
+        "targetUid": { "type": "string", "maxLength": 128 },
+        "reason": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["actorUid", "action", "targetUid", "reason", "createdAt"]
+    },
+    "AdminUser": {
+      "title": "AdminUser",
+      "description": "Controle de administradores autorizados no sistema",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "maxLength": 256 },
+        "role": { "type": "string", "enum": ["admin", "superadmin"] },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["role"]
+    }
+  },
+  "firestore": {
+    "/plans/{planId}": {
+      "schema": { "$ref": "#/entities/Plan" },
+      "description": "Planos disponíveis para compra e visualização"
+    },
+    "/subscriptions/{uid}": {
+      "schema": { "$ref": "#/entities/Subscription" },
+      "description": "Status de assinatura de cada usuário"
+    },
+    "/paymentEvents/{eventId}": {
+      "schema": { "$ref": "#/entities/PaymentEvent" },
+      "description": "Eventos de webhook do gateway Stripe gravados exclusivamente pelo backend"
+    },
+    "/adminAuditLogs/{logId}": {
+      "schema": { "$ref": "#/entities/AdminAuditLog" },
+      "description": "Logs de auditoria de alterações de acesso e moderação"
+    },
+    "/admins/{uid}": {
+      "schema": { "$ref": "#/entities/AdminUser" },
+      "description": "Lista autorizada de administradores do Dojo Digital"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        request.auth.token.email == 'gustavomacedo.consultor@gmail.com'
+      );
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Plans: leitura pública para autenticados, escrita restrita a admins
+    match /plans/{planId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin() && isValidId(planId);
+    }
+
+    // Subscriptions: cada usuário pode ler sua própria assinatura.
+    // Escritas de concessão de acesso são restritas a Admins ou Backend Server.
+    // Criação inicial de status 'free' com accessAllowed=false é permitida ao se cadastrar.
+    match /subscriptions/{userId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin();
+      
+      // Criação inicial permitida para o próprio usuário apenas se for plano 'free' e accessAllowed == false
+      allow create: if isOwner(userId) && isValidId(userId) && (
+        (request.resource.data.status == 'free' && request.resource.data.accessAllowed == false) ||
+        isAdmin()
+      );
+      
+      // Atualizações são restritas a administradores (o backend opera com service role / admin)
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // PaymentEvents: Logs de webhooks. Apenas administradores e backend podem acessar.
+    match /paymentEvents/{eventId} {
+      allow read, write: if isAdmin();
+    }
+
+    // AdminAuditLogs: Trilha de auditoria administrativa. Apenas administradores.
+    match /adminAuditLogs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && isValidId(logId);
+      allow update, delete: if false; // Imutável
+    }
+
+    // Admins list
+    match /admins/{adminId} {
+      allow get: if isOwner(adminId) || isAdmin();
+      allow list, write: if isAdmin();
+    }
+  }
+}

@@ -36,8 +36,11 @@ A aplicação foi organizada em 3 Módulos contendo um total de 5 Capítulos par
 - **Imagens Alocadas:**
   - `osaekomi waza.jpg` (Ilustração das técnicas de solo, posicionada na seção de Katame-Waza).
 
+**5. Catálogo do Gokyo (`catalogo.md`)**
+- **Conteúdo Integrado:** Catálogo completo com 139 links extraídos da playlist da Garça Judô, organizados por Te-Waza, Koshi-Waza, Ashi-Waza, Sutemi-Waza, Katame-Waza e Módulos Comparativos. Todo o material do Lote 2 e Lote 3 foi adicionado aqui como texto complementar de estudos.
+
 ### Módulo 3: Aperfeiçoamento
-**5. Katas do Judô (`katas.md`)**
+**6. Katas do Judô (`katas.md`)**
 - **Conteúdo Integrado:** Importância dos Katas, Nage-no-Kata e Katame-no-Kata.
 - **Vídeos (YouTube):**
   - Nage-no-Kata (https://www.youtube.com/embed/9MlyiOQ7_U0).
