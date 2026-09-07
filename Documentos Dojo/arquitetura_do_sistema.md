@@ -40,3 +40,18 @@ O **Dojo Digital** (desenvolvido por **OSSCONNECT**) é uma aplicação Web de p
   * A opção "Galeria de Vídeos" foi movida da base do banner escuro principal para as abas de navegação centrais (logo ao lado da aba "7 Trilhas Formativas"), ganhando protagonismo e resolvendo o problema de ocultação e quebra de layout de botões em telas pequenas.
 * **Card de Banner Dividido no Mobile**:
   * O banner "Sua Jornada do Conhecimento" adaptou-se com `flex-wrap text-balance` no Mobile para não alargar o container em celulares menores.
+
+## Preparação para Produção e Lançamento (Roadmap de Infraestrutura)
+* **Domínio de Produção**:
+  * O projeto será servido sob o subdomínio oficial **`dojo.ossconnect.com.br`**.
+  * É necessário autorizar este domínio nas configurações do Firebase Authentication (Authorized Domains), Google Cloud Console (OAuth Credentials) e nos Webhooks do Stripe.
+* **Autenticação, Firebase e Firestore**:
+  * A autenticação atual conta com implementação estrutural (Google Login e Email) que será consolidada em Produção.
+  * O Banco de Dados migrará do controle local (localStorage) para persistência segura em nuvem (Firestore) validada por Security Rules (`firestore.rules`).
+* **Sistema de Pagamentos (Stripe)**:
+  * O Paywall será operado pela Stripe, suportando pagamentos via Cartão de Crédito e confirmação de Pix.
+  * Será implementado um **Webhook Seguro** que atualizará os acessos no Firebase de modo server-to-server, garantindo a integridade dos planos.
+* **Jurídico e Governança**:
+  * Inclusão mandatório das páginas de Termos de Uso, Política de Privacidade e Política de Reembolso, em adequação à LGPD.
+* **Lançamento Controlado**:
+  * A aprovação das vendas depende de testes E2E (ponta a ponta), ativação do HTTPS sob o subdomínio definitivo e validação dos fluxos de revogação/concessão de acesso.

@@ -22,7 +22,8 @@ import {
   Flame,
   Sun,
   Moon,
-  GraduationCap
+  GraduationCap,
+  Share2
 } from 'lucide-react';
 import { Logo } from '../components/Logo';
 import { useTheme } from '../hooks/useTheme';
@@ -31,6 +32,23 @@ export function LandingPage() {
   const { theme, toggleTheme } = useTheme();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showVideoModal, setShowVideoModal] = useState(false);
+
+  const handleShare = async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: 'Dojo Digital - Plataforma do Judô Kodokan',
+          text: 'Conheça o Dojo Digital, a plataforma oficial de ensino do Judô Kodokan!',
+          url: window.location.origin
+        });
+      } else {
+        await navigator.clipboard.writeText(window.location.origin);
+        alert('Link copiado para a área de transferência!');
+      }
+    } catch (error) {
+      console.error('Erro ao compartilhar:', error);
+    }
+  };
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -123,6 +141,16 @@ export function LandingPage() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <button
+              onClick={handleShare}
+              className="hidden sm:flex items-center gap-1.5 p-2.5 sm:px-3 sm:py-2 text-zinc-600 hover:bg-zinc-100 rounded-xl dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors cursor-pointer text-xs font-bold"
+              aria-label="Compartilhar"
+              title="Compartilhar Plataforma"
+            >
+              <Share2 size={16} />
+              <span className="hidden lg:inline">Compartilhar</span>
+            </button>
+
             <button
               onClick={toggleTheme}
               className="p-2.5 text-zinc-600 hover:bg-zinc-100 rounded-xl dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors cursor-pointer"

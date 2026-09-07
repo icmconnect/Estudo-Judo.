@@ -42,7 +42,7 @@ export function Login() {
           Acesse o material didático oficial do Judô Kodokan e treinamentos digitais.
         </p>
 
-        <div className="space-y-4">
+        <div className="space-y-4 mb-8">
           <button 
             type="button"
             onClick={handleGoogleLogin}
@@ -69,6 +69,17 @@ export function Login() {
             Continuar com Apple
           </button>
         </div>
+
+        <button 
+          type="button"
+          onClick={() => navigate('/')}
+          className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-zinc-100 dark:bg-zinc-800/50 text-zinc-700 dark:text-zinc-300 rounded-xl font-semibold hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 cursor-pointer"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Voltar para o Início
+        </button>
         
         <p className="mt-8 text-xs text-zinc-500 dark:text-zinc-400 font-medium">
           Dojo Digital • Plataforma Oficial de Ensino Kodokan

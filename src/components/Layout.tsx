@@ -3,9 +3,14 @@ import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { SubscriptionBanner } from './SubscriptionBanner';
 import { useState } from 'react';
+import { WelcomeGuideModal } from './WelcomeGuideModal';
+import { useWelcomeGuide } from '../hooks/useWelcomeGuide';
+import { useAuth } from '../contexts/AuthContext';
 
 export function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { isOpen, closeGuide } = useWelcomeGuide();
+  const { user } = useAuth();
 
   return (
     <div className="flex min-h-screen bg-zinc-100 dark:bg-[#07090E] text-zinc-900 dark:text-zinc-100 font-sans selection:bg-amber-500 selection:text-zinc-950 transition-colors">
@@ -33,7 +38,6 @@ export function Layout() {
           <Outlet />
         </main>
 
-
         <footer 
           role="contentinfo"
           className="h-16 bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800/80 px-6 sm:px-8 flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-400 font-medium shrink-0"
@@ -51,6 +55,13 @@ export function Layout() {
           </div>
         </footer>
       </div>
+
+      {user && (
+        <WelcomeGuideModal 
+          isOpen={isOpen} 
+          onClose={closeGuide} 
+        />
+      )}
     </div>
   );
 }

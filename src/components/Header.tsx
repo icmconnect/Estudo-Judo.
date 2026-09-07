@@ -1,4 +1,4 @@
-import { Menu, Moon, Search, Sun, Compass, Bookmark, HardDrive, GraduationCap, Sparkles, ShieldCheck } from 'lucide-react';
+import { Menu, Moon, Search, Sun, Compass, Bookmark, HardDrive, GraduationCap, Sparkles, ShieldCheck, LogOut, HelpCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SearchModal } from './SearchModal';
@@ -8,6 +8,7 @@ import { useTheme } from '../hooks/useTheme';
 import { APP_STORAGE_MODE } from '../repositories';
 import { useSubscription } from '../contexts/SubscriptionContext';
 import { useAuth } from '../contexts/AuthContext';
+import { useWelcomeGuide } from '../hooks/useWelcomeGuide';
 
 export function Header({
   setSidebarOpen,
@@ -16,8 +17,9 @@ export function Header({
 }) {
   const { theme, toggleTheme } = useTheme();
   const { isActive, isFree } = useSubscription();
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const [searchOpen, setSearchOpen] = useState(false);
+  const { openGuide } = useWelcomeGuide();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -48,15 +50,6 @@ export function Header({
         className="sticky top-0 z-30 flex h-20 w-full items-center justify-between border-b border-zinc-200 dark:border-zinc-800/80 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl px-2 xs:px-4 lg:px-8 shrink-0 transition-colors"
       >
         <div className="flex items-center gap-1 xs:gap-3 shrink min-w-0">
-          <button
-            onClick={() => setSidebarOpen(true)}
-            className="p-2 sm:p-2.5 -ml-1 sm:-ml-2 text-zinc-600 hover:bg-zinc-100 rounded-xl dark:text-zinc-300 dark:hover:bg-zinc-800 lg:hidden transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0"
-            aria-label="Abrir menu lateral de navegação"
-            aria-haspopup="dialog"
-          >
-            <Menu size={22} aria-hidden="true" />
-          </button>
-          
           <div className="flex items-center gap-3 shrink min-w-0">
             <div className="shrink min-w-0 scale-90 xs:scale-100 origin-left">
               <Logo size="sm" showSubtitle={false} />
@@ -132,6 +125,16 @@ export function Header({
           <InstallAppButton />
 
           <div className="flex items-center gap-1 sm:gap-2 sm:gap-3 border-l pl-2 sm:pl-3 sm:pl-4 border-zinc-200 dark:border-zinc-800 shrink-0">
+            {user && (
+              <button
+                onClick={openGuide}
+                className="p-2 sm:p-2.5 text-zinc-600 hover:bg-zinc-100 rounded-xl dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 cursor-pointer shrink-0"
+                aria-label="Ver guia inicial novamente"
+                title="Ajuda e Guia Inicial"
+              >
+                <HelpCircle size={20} aria-hidden="true" />
+              </button>
+            )}
             <button
               onClick={toggleTheme}
               className="p-2 sm:p-2.5 text-zinc-600 hover:bg-zinc-100 rounded-xl dark:text-zinc-300 dark:hover:bg-zinc-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 cursor-pointer shrink-0"
@@ -144,26 +147,48 @@ export function Header({
                 <Sun size={19} className="text-amber-400" aria-hidden="true" />
               )}
             </button>
-            
-            <a 
-              href={user ? "/minha-assinatura" : "/login"} 
-              className="flex items-center gap-2 p-1 pr-2 sm:pr-3 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
-              title="Acessar Área do Aluno"
-              aria-label="Acessar Área do Aluno"
+
+            <button
+              onClick={() => setSidebarOpen(true)}
+              className="p-2 sm:p-2.5 text-zinc-600 hover:bg-zinc-100 rounded-xl dark:text-zinc-300 dark:hover:bg-zinc-800 lg:hidden transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0"
+              aria-label="Abrir menu lateral de navegação"
+              aria-haspopup="dialog"
             >
-              <div 
-                className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center text-[10px] sm:text-xs font-black text-white shadow-md shadow-emerald-600/20 shrink-0"
-                aria-hidden="true"
+              <Menu size={22} aria-hidden="true" />
+            </button>
+            
+            <div className="flex items-center gap-1 sm:gap-2 border-l border-zinc-200 dark:border-zinc-800 pl-2 ml-1">
+              <a 
+                href={user ? "/minha-assinatura" : "/login"} 
+                className="flex items-center gap-2 p-1 pr-2 sm:pr-3 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                title="Acessar Área do Aluno"
+                aria-label="Acessar Área do Aluno"
               >
-                {user ? getInitials(user.displayName || user.email) : 'DD'}
-              </div>
-              {user && (
-                <div className="hidden md:block text-[11px] leading-tight font-medium text-zinc-700 dark:text-zinc-300">
-                  <span className="text-zinc-500 dark:text-zinc-400">Bem-vindo,</span><br/>
-                  <span className="font-bold">{getFirstName(user.displayName || user.email)}</span>
+                <div 
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center text-[10px] sm:text-xs font-black text-white shadow-md shadow-emerald-600/20 shrink-0"
+                  aria-hidden="true"
+                >
+                  {user ? getInitials(user.displayName || user.email) : 'DD'}
                 </div>
+                {user && (
+                  <div className="hidden xs:block text-[11px] leading-tight font-medium text-zinc-700 dark:text-zinc-300">
+                    <span className="text-zinc-500 dark:text-zinc-400">Bem-vindo,</span><br/>
+                    <span className="font-bold truncate max-w-[80px] sm:max-w-[120px] inline-block">{getFirstName(user.displayName || user.email)}</span>
+                  </div>
+                )}
+              </a>
+              
+              {user && (
+                <button
+                  onClick={() => logout()}
+                  className="p-2 text-zinc-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:text-rose-400 dark:hover:bg-rose-500/10 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
+                  title="Sair do aplicativo"
+                  aria-label="Sair"
+                >
+                  <LogOut size={18} />
+                </button>
               )}
-            </a>
+            </div>
           </div>
         </div>
       </header>
