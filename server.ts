@@ -3,9 +3,50 @@ import path from 'path';
 import { createServer as createViteServer } from 'vite';
 import Stripe from 'stripe';
 import crypto from 'crypto';
+import cors from 'cors';
+import admin from 'firebase-admin';
 
 const app = express();
 const PORT = 3000;
+
+if (!admin.apps.length) {
+  try {
+    admin.initializeApp();
+  } catch (e) {
+    console.warn('Firebase Admin initialization notice:', e);
+  }
+}
+
+app.use(cors({
+  origin: [process.env.FRONTEND_URL || 'https://estudojudo.com.br', 'http://localhost:5173', 'http://localhost:3000'],
+  credentials: true
+}));
+
+async function requireAuth(req: any, res: any, next: any) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith('Bearer ')) return res.status(401).json({ error: 'Token ausente.' });
+  try {
+    const token = authHeader.split('Bearer ')[1];
+    req.user = await admin.auth().verifyIdToken(token);
+    next();
+  } catch (error) {
+    return res.status(401).json({ error: 'Sessão inválida.' });
+  }
+}
+
+function requireAdmin(req: any, res: any, next: any) {
+  if (req.user && (req.user.admin === true || req.user.role === 'admin' || req.user.email === 'gustavomacedo.consultor@gmail.com')) return next();
+  return res.status(403).json({ error: 'Acesso negado.' });
+}
+
+// Endpoints protegidos solicitados
+app.post('/api/corrigir-redacao', requireAuth, async (_req, res) => {
+  res.json({ success: true, message: 'Endpoint protegido de redação ativo.' });
+});
+
+app.post('/api/gemini/ocr', requireAuth, async (_req, res) => {
+  res.json({ success: true, message: 'Endpoint protegido de OCR ativo.' });
+});
 
 // Lazy initialization do cliente Stripe
 let stripeClient: Stripe | null = null;
@@ -364,7 +405,7 @@ app.get('/api/stripe/subscription-status', (req: Request, res: Response): void =
 // -------------------------------------------------------------
 // 4. ADMIN: CONCEDER ACESSO MANUAL COM AUDITORIA
 // -------------------------------------------------------------
-app.post('/api/admin/grant-access', (req: Request, res: Response): void => {
+app.post('/api/admin/grant-access', requireAuth, requireAdmin, (req: Request, res: Response): void => {
   const { actorUid, actorEmail, targetUid, reason } = req.body;
 
   if (!actorUid || !targetUid || !reason) {
@@ -413,7 +454,7 @@ app.post('/api/admin/grant-access', (req: Request, res: Response): void => {
 // -------------------------------------------------------------
 // 5. ADMIN: REVOGAR ACESSO COM AUDITORIA
 // -------------------------------------------------------------
-app.post('/api/admin/revoke-access', (req: Request, res: Response): void => {
+app.post('/api/admin/revoke-access', requireAuth, requireAdmin, (req: Request, res: Response): void => {
   const { actorUid, actorEmail, targetUid, reason } = req.body;
 
   if (!actorUid || !targetUid || !reason) {
@@ -462,7 +503,7 @@ app.post('/api/admin/revoke-access', (req: Request, res: Response): void => {
 // -------------------------------------------------------------
 // 6. ADMIN: BLOQUEAR / DESBLOQUEAR USUÁRIO COM AUDITORIA
 // -------------------------------------------------------------
-app.post('/api/admin/block-user', (req: Request, res: Response): void => {
+app.post('/api/admin/block-user', requireAuth, requireAdmin, (req: Request, res: Response): void => {
   const { actorUid, actorEmail, targetUid, block, reason } = req.body;
 
   if (!actorUid || !targetUid || !reason) {
@@ -512,7 +553,7 @@ app.post('/api/admin/block-user', (req: Request, res: Response): void => {
 // -------------------------------------------------------------
 // 7. ADMIN: LISTAGEM GERAL DE ASSINATURAS E AUDITORIA
 // -------------------------------------------------------------
-app.get('/api/admin/users-subscriptions', (req: Request, res: Response): void => {
+app.get('/api/admin/users-subscriptions', requireAuth, requireAdmin, (req: Request, res: Response): void => {
   const subscriptions = Array.from(inMemorySubscriptions.values());
   const paymentEvents = Array.from(inMemoryPaymentEvents.values());
   res.json({
